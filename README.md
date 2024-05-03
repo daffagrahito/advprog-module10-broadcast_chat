@@ -1,4 +1,4 @@
-# Module 10 - Asynchronous Programming - Timer
+# Module 10 - Asynchronous Programming - Broadcast Chat
 
 > ##### Muhammad Daffa Grahito Triharsanto - 2206820075 - Pemrograman Lanjut B
 
@@ -36,6 +36,7 @@ Dari gambar terlihat kalau terdapat informasi dari setiap sender dimana karena n
 let hostname = gethostname().into_string().unwrap_or_else(|_| "unknown".to_string());
 ...
 println!("... {}'s ...{}", hostname, addr);
+...
 ```
 
 Dengan begini, semuanya bisa tahu dari computer/device siapa yang mengirimkan messagesnya.
