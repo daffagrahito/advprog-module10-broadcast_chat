@@ -26,3 +26,16 @@ let listener = TcpListener::bind("127.0.0.1:8080").await?;
 ```
 
 Keduanya harus mempunyai port yang sama karena jika tidak maka akan terjadi error dimana client tidak bisa menemukan port yang tepat lalu program akan terminate.
+
+## 2.3. Small changes. Add some information to client
+
+![Image 2.3](assets/images/2.3.png)
+
+Dari gambar terlihat kalau terdapat informasi dari setiap sender dimana karena nama computer saya Dafuq jadi didapat hasil seperti itu. Disini saya mendapatkan nama hostname dengan menggunakan dependency `gethostname`. Saya mengganti print statement pada client dan server nya dengan menambahkan hostname sehingga kode kurang lebih bentuknya seperti ini untuk keduanya
+```rust
+let hostname = gethostname().into_string().unwrap_or_else(|_| "unknown".to_string());
+...
+println!("... {}'s ...{}", hostname, addr);
+```
+
+Dengan begini, semuanya bisa tahu dari computer/device siapa yang mengirimkan messagesnya.
